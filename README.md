@@ -15,7 +15,7 @@ cargo test
 
 ## Status
 
-There has been already crates [akelee8/mxnet-sys
+There has been already crates [jakelee8/mxnet-sys
 ](https://github.com/jakelee8/mxnet-sys) and [jakelee8/mxnet-rs
 ](https://github.com/jakelee8/mxnet-rs) but they are not longer maintained.
 
