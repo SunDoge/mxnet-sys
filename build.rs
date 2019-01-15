@@ -2,6 +2,9 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
+    let mxnet_path = env::var("MXNET_PATH").expect("MXNET_PATH not defined");
+    println!("cargo:rustc-link-search=native={}", mxnet_path);
+    println!("cargo:rustc-env=LD_LIBRARY_PATH={}", mxnet_path);
     // Tell cargo to tell rustc to link the system bzip2
     // shared library.
     println!("cargo:rustc-link-lib=mxnet");
@@ -15,6 +18,7 @@ fn main() {
         .header("wrapper.h")
         // max_align_t should be 24usize, but is tested as 32usize.
         // It is not used by other, so ignore it.
+        .clang_arg(format!("-I{}", mxnet_path))
         .blacklist_type("max_align_t")
         // Finish the builder and generate the bindings.
         .generate()

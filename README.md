@@ -6,9 +6,6 @@ You should specify where `libmxnet.so` is. For example:
 
 ```bash
 export MXNET_PATH=/home/sundoge/miniconda3/envs/mxnet1.3/lib/python3.6/site-packages/mxnet
-export LD_LIBRARY_PATH=$MXNET_PATH:$LD_LIBRARY_PATH
-export C_INCLUDE_PATH=$MXNET_PATH:$C_INCLUDE_PATH
-sudo ln -s $MXNET_PATH/libmxnet.so /usr/local/lib
 cargo build
 cargo test
 ```
