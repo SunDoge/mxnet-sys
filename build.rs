@@ -4,7 +4,7 @@ use std::path::PathBuf;
 fn main() {
     let mxnet_path = env::var("MXNET_PATH").expect("MXNET_PATH not defined");
     println!("cargo:rustc-link-search=native={}", mxnet_path);
-    println!("cargo:rustc-env=LD_LIBRARY_PATH={}", mxnet_path);
+    // println!("cargo:rustc-env=LD_LIBRARY_PATH={}", mxnet_path);
     // Tell cargo to tell rustc to link the system bzip2
     // shared library.
     println!("cargo:rustc-link-lib=mxnet");
